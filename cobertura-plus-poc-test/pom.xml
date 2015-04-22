@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.joan.tolos.cobertura</groupId>
+        <artifactId>cobertura-plus-poc</artifactId>
+        <version>15.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>cobertura-plus-poc-test</artifactId>
+    <packaging>jar</packaging>
+    <name>--- Cobertura Plus POC -> Test Module</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.joan.tolos.cobertura</groupId>
+            <artifactId>cobertura-plus-poc-product</artifactId>
+            <version>15.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.joan.tolos.cobertura</groupId>
+            <artifactId>cobertura-plus-poc-enum</artifactId>
+            <version>15.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sourceforge.cobertura</groupId>
+            <artifactId>cobertura</artifactId>
+            <version>2.1.1</version>
+        </dependency>
+    </dependencies>
+</project>

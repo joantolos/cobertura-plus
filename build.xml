@@ -1,0 +1,63 @@
+<project>
+    <target name="instrument">
+        <antcall target="instrumentAModule">
+            <param name="module" value="cobertura-plus-poc-enum"/>
+        </antcall>
+        <antcall target="instrumentAModule">
+            <param name="module" value="cobertura-plus-poc-product"/>
+        </antcall>
+    </target>
+
+    <target name="report" depends="merge">
+        <antcall target="copySrcFiles"/>
+        <property name="src.dir" value="src/main/java/"/>
+        <cobertura-report datafile="sum.ser" format="html" destdir="./target/report">
+            <fileset dir="./reportClasses/${src.dir}"/>
+        </cobertura-report>
+        <antcall target="cleanSrcFiles"/>
+    </target>
+
+    <target name="copySrcFiles">
+        <property name="src.dir" value="src/main/java/com/joantolos/cobertura"/>
+        <copy todir="./reportClasses/${src.dir}/">
+            <fileset dir="./cobertura-plus-poc-product/${src.dir}/"/>
+            <fileset dir="./cobertura-plus-poc-enum/${src.dir}/"/>
+        </copy>
+    </target>
+
+    <target name="cleanSrcFiles">
+        <property name="src.dir" value="src/main/java/com/joantolos/cobertura"/>
+        <delete includeEmptyDirs="true" failonerror="false">
+            <fileset dir="./reportClasses/${src.dir}/"/>
+        </delete>
+    </target>
+
+    <target name="merge">
+        <cobertura-merge datafile="sum.ser">
+            <fileset dir=".">
+                <include name="**/cobertura.ser"/>
+            </fileset>
+        </cobertura-merge>
+    </target>
+
+    <target name="instrumentAModule">
+        <property name="classes.dir" value="target/classes"/>
+        <cobertura-instrument todir="./${module}/${classes.dir}">
+            <fileset dir="./${module}/target/classes">
+                <include name="**/*.class"/>
+            </fileset>
+        </cobertura-instrument>
+    </target>
+
+    <property environment="env"/>
+
+    <path id="cobertura.classpath">
+        <fileset dir="${env.COBERTURA_HOME}">
+            <include name="cobertura-2.1.1.jar"/>
+            <include name="lib/**/*.jar"/>
+        </fileset>
+    </path>
+
+    <taskdef classpathref="cobertura.classpath" resource="tasks.properties"/>
+    
+</project>
