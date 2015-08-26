@@ -10,9 +10,10 @@
     <name>--- Cobertura Plus POC -> Parent</name>
     
     <modules>
-        <module>cobertura-plus-poc-product</module>
         <module>cobertura-plus-poc-enum</module>
+        <module>cobertura-plus-poc-product</module>
         <module>cobertura-plus-poc-test</module>
+        <module>cobertura-plus-poc-coverage</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

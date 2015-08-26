@@ -10,16 +10,12 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>cobertura-plus-poc-product</artifactId>
+    <artifactId>cobertura-plus-poc-coverage</artifactId>
     <packaging>jar</packaging>
-    <name>--- Cobertura Plus POC -> Product Module</name>
+    <name>--- Cobertura Plus POC -> Coverage Module</name>
 
     <dependencies>
-        <dependency>
-            <groupId>com.joan.tolos.cobertura</groupId>
-            <artifactId>cobertura-plus-poc-enum</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
+        
     </dependencies>
     
 </project>

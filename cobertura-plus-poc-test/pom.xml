@@ -17,12 +17,7 @@
         <dependency>
             <groupId>com.joan.tolos.cobertura</groupId>
             <artifactId>cobertura-plus-poc-product</artifactId>
-            <version>15.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.joan.tolos.cobertura</groupId>
-            <artifactId>cobertura-plus-poc-enum</artifactId>
-            <version>15.0.1-SNAPSHOT</version>
+            <version>${project.parent.version}</version>
         </dependency>
         <dependency>
             <groupId>net.sourceforge.cobertura</groupId>

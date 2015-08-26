@@ -15,11 +15,7 @@
     <name>--- Cobertura Plus POC -> Enum Module</name>
 
     <dependencies>
-        <dependency>
-            <groupId>com.joan.tolos.cobertura</groupId>
-            <artifactId>cobertura-plus-poc-enum</artifactId>
-            <version>15.0.1-SNAPSHOT</version>
-        </dependency>
+        
     </dependencies>
     
 </project>

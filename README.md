@@ -31,14 +31,36 @@ On the parent folder of the project type:
 
 `mvn clean compile`
 
-`ant instrument`
+Then on the coverage folder type:
+
+`${PARENT_FOLDER}/cobertura-plus-poc-coverage/script/ant instrument`
+
+Then again on the parent folder:
 
 `mvn test`
 
-`ant report`
+Then again to the coverage folder:
+
+`${PARENT_FOLDER}/cobertura-plus-poc-coverage/script/ant report`
+
+`${PARENT_FOLDER}/cobertura-plus-poc-coverage/script/ant cleanCoberturaFiles`
+
+## Using SSH script to run all the steps with one command
+
+For your comfort, you can use the script to make all the steps at the same time:
+
+`${PARENT_FOLDER}/cobertura-plus-poc-coverage/script/`
+
+`./createTestCoverageReport.sh`
+
+This is an SSH script, so you will have to run it on Linux or use Cygwin tool or similar on Windows.
 
 ## Check the report
 
 You will find the report on:
 
-`${PARENT_FOLDER}/target/report/index.html`
+`${PARENT_FOLDER}/cobertura-plus-poc-coverage/report/index.html`
+
+You will get a report like this:
+
+![alt text](reportSample.png "Architecture")

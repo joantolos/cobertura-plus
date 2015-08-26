@@ -5,6 +5,6 @@ package com.joantolos.cobertura.enums;
  */
 public enum Method {
     AGILE,
-    WATERFALL;
-    
+    THREE_TWELVE,
+    WATERFALL
 }
